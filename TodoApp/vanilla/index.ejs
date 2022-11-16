@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+    <body>
+        <!-- server side using templating -->
+        <h4><%= new Date() %></h4>
+        <div id="app">
+        </div>
+    </body>
+    <script>
+        //client side
+        fetch('http://localhost:3000/api/todos').then(res=>res.json()).then(todos=>{
+            const ul = document.createElement('ul');
+
+            for (const todo of todos){
+                const div = document.createElement('div');
+                div.textContent = todo.user;
+
+                ul.appendChild(document.createElement('li')).appendChild(div);
+            }
+
+            document.getElementById("app").appendChild(ul);
+        })
+    </script>
+</html>
