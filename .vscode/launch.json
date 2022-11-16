@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "Launch TodoApp",
+            "localRoot": "${workspaceFolder}/TodoApp",
+            "program": "${workspaceFolder}/TodoApp/index.js",
+            "envFile": "${workspaceFolder}/TodoApp/.env",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        }
+    ]
+}
